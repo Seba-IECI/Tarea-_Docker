@@ -1,0 +1,137 @@
+.player-card {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(165, 0, 68, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.player-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(165, 0, 68, 0.6);
+  box-shadow: 0 12px 40px rgba(165, 0, 68, 0.25);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  background: linear-gradient(135deg, rgba(165, 0, 68, 0.15), rgba(0, 77, 152, 0.15));
+}
+
+.player-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a0a2e, #0f3460);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-initials {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.player-dorsal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: rgba(237, 187, 95, 0.3);
+}
+
+.card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.player-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.player-posicion {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.player-nacionalidad {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #8892b0;
+  margin: 0.75rem 0;
+}
+
+.player-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #edbb5f;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #8892b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.player-periodo {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #8892b0;
+  margin: 0.5rem 0;
+}
+
+.player-descripcion {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #a8b2d1;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .player-card:hover {
+    transform: translateY(-4px);
+  }
+}

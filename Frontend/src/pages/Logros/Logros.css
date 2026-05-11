@@ -1,0 +1,112 @@
+/* ============================
+   LOGROS PAGE STYLES
+   ============================ */
+@import '../JugadoresActuales/JugadoresActuales.css';
+
+.logros-page {
+  min-height: 80vh;
+  padding: 3rem 2rem;
+  background: #0a0a1a;
+}
+
+.logros-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.logro-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  border: 1px solid rgba(165, 0, 68, 0.15);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.logro-card:hover {
+  transform: translateX(8px);
+  border-color: rgba(165, 0, 68, 0.5);
+  box-shadow: -4px 0 20px rgba(165, 0, 68, 0.15);
+}
+
+.logro-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(237, 187, 95, 0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(237, 187, 95, 0.15);
+}
+
+.logro-content {
+  flex: 1;
+}
+
+.logro-anio {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #edbb5f;
+  background: rgba(237, 187, 95, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.logro-titulo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0.5rem 0 0.4rem;
+}
+
+.logro-categoria {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #a50044;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logro-descripcion {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #a8b2d1;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .logro-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .logro-card:hover {
+    transform: translateY(-4px);
+  }
+}

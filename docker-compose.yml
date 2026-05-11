@@ -1,0 +1,61 @@
+# =============================================
+# FC Barcelona - Docker Compose
+# Node.js + React + PostgreSQL 16
+# =============================================
+
+services:
+  # --- Base de Datos PostgreSQL 16 ---
+  db:
+    image: postgres:16-alpine
+    container_name: fcbarcelona-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secreto
+      POSTGRES_DB: fcbarcelona
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./Database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d fcbarcelona"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # --- Backend Node.js (Express) ---
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: fcbarcelona-backend
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      DB_HOST: db
+      DB_USER: admin
+      DB_PASSWORD: secreto
+      DB_NAME: fcbarcelona
+      PORT: 3001
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # --- Frontend React (Vite) ---
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: fcbarcelona-frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: http://localhost:3001/api
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

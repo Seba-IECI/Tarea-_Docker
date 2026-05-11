@@ -1,0 +1,22 @@
+/* Reutiliza estilos de JugadoresActuales.css */
+@import '../JugadoresActuales/JugadoresActuales.css';
+
+.historicos .page-header {
+  position: relative;
+}
+
+.historicos .page-header::after {
+  content: '★';
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.05;
+  top: -10px;
+  right: 30%;
+  color: #edbb5f;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(1.1); }
+}
