@@ -26,6 +26,7 @@ services:
 
   # --- Backend Node.js (Express) ---
   backend:
+    image: fcbarcelona-backend
     build:
       context: ./Backend
       dockerfile: Dockerfile
@@ -45,6 +46,7 @@ services:
 
   # --- Frontend React (Vite) ---
   frontend:
+    image: fcbarcelona-frontend
     build:
       context: ./Frontend
       dockerfile: Dockerfile
